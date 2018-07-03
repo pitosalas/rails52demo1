@@ -13,7 +13,7 @@ class Content < ApplicationRecord
   end
 
   def submit_job
-    saved_change = saved_change_to_original? || saved_change_to_to_lang?
+    saved_change = saved_change_to_text? || saved_change_to_to_lang?
     TranslateJob.perform_later(self) if saved_change
   end
 end

@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2018_07_03_013721) do
   enable_extension "plpgsql"
 
   create_table "contents", force: :cascade do |t|
-    t.text "original"
-    t.text "translated"
+    t.text "text"
+    t.text "translation"
     t.string "from_lang"
     t.string "to_lang"
     t.datetime "created_at", null: false

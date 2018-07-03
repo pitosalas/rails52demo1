@@ -12,26 +12,34 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :original %>
-    <%= form.text_area :original %>
+    <%= form.label :text, class: "label" %>
+    <div class="control">
+      <%= form.text_area :text, class: "textarea" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :translated %>
-    <%= form.text_area :translated %>
+    <%= form.label :translation, class: "label" %>
+    <div class="control">
+      <%= form.text_area :translation, class: "textarea", readonly: true %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :from_lang %>
-    <%= form.text_field :from_lang %>
+    <%= form.label :from_lang, class: "label" %>
+    <div class="select"> 
+      <%= form.select(:from_lang, options_for_select([["English", "en"], ["French", "fr"], ["Spanish", "es"]])) %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :to_lang %>
-    <%= form.text_field :to_lang %>
+    <%= form.label :to_lang,  class: "label" %>
+    <div class="select"> 
+      <%= form.select(:to_lang, options_for_select([["English", "en"], ["French", "fr"], ["Spanish", "es"]])) %>
+    </div>
   </div>
 
-  <div class="actions">
+  <div class="actions control">
     <%= form.submit %>
   </div>
 <% end %>

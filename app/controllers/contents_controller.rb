@@ -5,6 +5,7 @@ class ContentsController < ApplicationController
   # GET /contents.json
   def index
     @contents = Content.all
+    puts @contents.size
   end
 
   # GET /contents/1
@@ -62,13 +63,14 @@ class ContentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_content
-      @content = Content.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  
+  def set_content
+    @content = Content.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def content_params
-      params.require(:content).permit(:original, :translated, :from_lang, :to_lang)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def content_params
+    params.require(:content).permit(:text, :translation, :from_lang, :to_lang)
+  end
 end
