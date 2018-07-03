@@ -1,0 +1,37 @@
+<%= form_with(model: content, local: true) do |form| %>
+  <% if content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+      <% content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :original %>
+    <%= form.text_area :original %>
+  </div>
+
+  <div class="field">
+    <%= form.label :translated %>
+    <%= form.text_area :translated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from_lang %>
+    <%= form.text_field :from_lang %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to_lang %>
+    <%= form.text_field :to_lang %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
