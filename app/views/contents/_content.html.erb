@@ -1,11 +1,10 @@
-<tr>
-  <td><%= content.text %></td>
-  <td><%= content.translation %></td>
-  <td><%= content.from_lang %></td>
-  <td><%= content.to_lang %></td>
-  <td>
+<div class="box">
+  <p><%= content.text %></p>
+  <p><%= content.translation %></p>
+  <p>Original language: <%= content.from_lang %>, translate to: <%= content.to_lang %></p>
+  <div class="is-size-7">
     <%= link_to 'Show', content %>
     <%= link_to 'Edit', edit_content_path(content) %>
     <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </td>
-</tr>
+  </div>
+</div>

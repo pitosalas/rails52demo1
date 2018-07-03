@@ -1,20 +1,3 @@
 <p id="notice"><%= notice %></p>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Original</th>
-      <th>Translated</th>
-      <th>From lang</th>
-      <th>To lang</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render partial: "content", collection: @contents %>
-  </tbody>
-</table>
-
-<br>
-
+<%= render partial: "content", collection: @contents %>
 <%= link_to 'New Content', new_content_path %>
