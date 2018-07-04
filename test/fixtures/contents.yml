@@ -1,13 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  original: MyText
-  translated: MyText
-  from_lang: MyString
-  to_lang: MyString
+  text: Buy my house
+  from_lang: en
 
 two:
-  original: MyText
-  translated: MyText
-  from_lang: MyString
-  to_lang: MyString
+  text: It has to be true for it to be create_table
+  from_lang: en

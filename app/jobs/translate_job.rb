@@ -3,9 +3,10 @@ class TranslateJob < ApplicationJob
 
   def perform(content)
     raise "invalid perform" unless content.class == Content
-    valid_lang = TranslationHelper.validate_lang(content.from_lang) && TranslationHelper.validate_lang(content.to_lang)
-    raise "invald from or two lang" unless valid_lang
-    content.translation = TranslationHelper.translate(content.text, content.from_lang, content.to_lang)
+    valid_lang = TranslationHelper.validate_lang(content.from_lang)
+    raise "invald from lang" unless valid_lang
+    # TODO
+    # content.t = TranslationHelper.translate(content.text, content.from_lang, content.to_lang)
     content.save
   end
 end

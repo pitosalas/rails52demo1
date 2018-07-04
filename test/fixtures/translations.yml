@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  translation: Quempra mi casa
+  to_lang: es
+  contents: one
+
+two:
+  translation: Koop mij huis
+  to_lang: MyString
+  contents: one

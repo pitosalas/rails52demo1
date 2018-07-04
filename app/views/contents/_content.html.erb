@@ -1,7 +1,6 @@
 <div class="box">
   <p><%= content.text %></p>
-  <p><%= content.translation %></p>
-  <p>Original language: <%= content.from_lang %>, translate to: <%= content.to_lang %></p>
+  <p>Original language: <%= content.from_lang %></p>
   <div class="is-size-7">
     <%= link_to 'Show', content %>
     <%= link_to 'Edit', edit_content_path(content) %>

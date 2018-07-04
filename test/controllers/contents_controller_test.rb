@@ -17,7 +17,7 @@ class ContentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create content" do
     assert_difference('Content.count') do
-      post contents_url, params: { content: { from_lang: @content.from_lang, original: @content.original, to_lang: @content.to_lang, translated: @content.translated } }
+      post contents_url, params: {content: {from_lang: @content.from_lang, text: @content.text}}
     end
 
     assert_redirected_to content_url(Content.last)
@@ -34,7 +34,7 @@ class ContentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update content" do
-    patch content_url(@content), params: { content: { from_lang: @content.from_lang, original: @content.original, to_lang: @content.to_lang, translated: @content.translated } }
+    patch content_url(@content), params: {content: {from_lang: @content.from_lang, original: @content.text}}
     assert_redirected_to content_url(@content)
   end
 

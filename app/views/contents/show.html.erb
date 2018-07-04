@@ -6,19 +6,8 @@
 </p>
 
 <p>
-  <strong>Translated:</strong>
-  <%= @content.translation %>
-</p>
-
-<p>
   <strong>From lang:</strong>
   <%= @content.from_lang %>
 </p>
-
-<p>
-  <strong>To lang:</strong>
-  <%= @content.to_lang %>
-</p>
-
 <%= link_to 'Edit', edit_content_path(@content) %> |
 <%= link_to 'Back', contents_path %>

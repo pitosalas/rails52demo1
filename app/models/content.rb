@@ -1,6 +1,7 @@
 class Content < ApplicationRecord
 
   include ActiveModel::Dirty
+  has_many :translations
 
   after_create :init
   after_commit :submit_job
@@ -9,11 +10,10 @@ class Content < ApplicationRecord
 
   def init
     self.from_lang = "EN"
-    self.to_lang = "ES"
   end
 
   def submit_job
-    saved_change = saved_change_to_text? || saved_change_to_to_lang?
+    saved_change = saved_change_to_text?
     TranslateJob.perform_later(self) if saved_change
   end
 end

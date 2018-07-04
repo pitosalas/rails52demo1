@@ -10,18 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_03_013721) do
+ActiveRecord::Schema.define(version: 2018_07_04_014928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "contents", force: :cascade do |t|
     t.text "text"
-    t.text "translation"
     t.string "from_lang"
-    t.string "to_lang"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "translations", force: :cascade do |t|
+    t.text "translation"
+    t.string "to_lang"
+    t.bigint "contents_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contents_id"], name: "index_translations_on_contents_id"
   end
 
 end
