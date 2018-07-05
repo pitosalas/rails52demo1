@@ -3,9 +3,9 @@
 one:
   translation: Quempra mi casa
   to_lang: es
-  contents: one
+  content: one
 
 two:
   translation: Koop mij huis
   to_lang: MyString
-  contents: one
+  content: one

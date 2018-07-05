@@ -1,7 +1,7 @@
 class Content < ApplicationRecord
 
   include ActiveModel::Dirty
-  has_many :translations
+  has_many :translations, dependent: :destroy
 
   after_create :init
   after_commit :submit_job

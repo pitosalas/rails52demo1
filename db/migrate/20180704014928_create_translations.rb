@@ -3,7 +3,7 @@ class CreateTranslations < ActiveRecord::Migration[5.2]
     create_table :translations do |t|
       t.text :translation
       t.string :to_lang
-      t.references :contents
+      t.references :content, foreign_key: true, dependent: :delete
       t.timestamps
     end
   end

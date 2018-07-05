@@ -1,9 +1,9 @@
-<div class="box">
-  <p><%= content.text %></p>
-  <p>Original language: <%= content.from_lang %></p>
-  <div class="is-size-7">
-    <%= link_to 'Show', content %>
-    <%= link_to 'Edit', edit_content_path(content) %>
-    <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
-</div>
+<tr>
+  <td><%= content.text %></td>
+  <td><%= content.from_lang%></td>
+  <td><%= content.translations.size %>
+  <td><%= link_to 'New', new_content_translation_path(content) %></td>
+  <td><%= link_to 'Show', content %></td>
+  <td><%= link_to 'Edit', edit_content_path(content) %></td>
+  <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

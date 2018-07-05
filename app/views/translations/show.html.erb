@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% content_for :title_area do %>
+  Translation
+<% end %>
 <p>
   <strong>Translation:</strong>
   <%= @translation.translation %>
@@ -11,8 +12,8 @@
 </p>
 
 <p>
-  <strong>Contents:</strong>
-  <%= @translation.contents %>
+  <strong>Content:</strong>
+  <%= @translation.content %>
 </p>
 
 <%= link_to 'Edit', edit_translation_path(@translation) %> |

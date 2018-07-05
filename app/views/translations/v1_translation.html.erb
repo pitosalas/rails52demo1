@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <div class="card-header-title" %>
+      <%= translation.to_lang %>
+    </div>
+    </div>
+  <div class="card-content">
+    <div class="content">
+      <%= translation.translation %>
+    </div>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'delete', edit_content_translation_path(@content, translation), class: "card-footer-item" %>
+    <%= link_to 'edit', edit_content_translation_path(@content, translation), class: "card-footer-item"  %>
+  </div>
+</div>

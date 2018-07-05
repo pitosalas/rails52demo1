@@ -6,8 +6,20 @@
   </head>
 
   <body>
-  <section class="section">
-    <%= yield %>
-  </section>
+    <section class="section">
+      <div class="container">
+        <%= link_to contents_path do %>
+          <span class="button icon is-medium" >
+            <i class="fas fa-home"></i>
+          </span>
+        <% end %>
+        <h1 class="title">
+          <%= yield :title_area %>
+        </h1>
+          
+        <p id="notice"><%= notice %></p>
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>

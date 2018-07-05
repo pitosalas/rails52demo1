@@ -1,13 +1,16 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Original:</strong>
-  <%= @content.text %>
-</p>
-
-<p>
-  <strong>From lang:</strong>
-  <%= @content.from_lang %>
-</p>
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>
+<% content_for :title_area do %>
+  Translations
+<% end %>
+<h2 class="subtitle">
+  <%= @content.from_lang %>: <%= @content.text %>
+</h2>
+<div class="content">
+  <table class="table">
+    <tbody>
+      <%= render partial: "translations/translation", collection: @translations %>
+    </tbody>
+  </table>
+</div>
+<%= link_to 'add another translation', new_content_translation_path(@content), class: "button" %>
+<%= link_to 'Back', contents_path, class: "button" %>

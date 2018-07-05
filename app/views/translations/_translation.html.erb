@@ -1,0 +1,13 @@
+  <tr>
+    <td>
+      <%= translation.to_lang %>
+    </td>
+    <td>
+      <%= translation.translation %>
+    </td>
+    <td>
+      <%= link_to 'edit', edit_content_translation_path(@content, translation)  %>
+      <%= link_to 'delete', content_translation_path(@content, translation), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+

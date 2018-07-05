@@ -1,6 +1,4 @@
-<h1>Editing Translation</h1>
-
+<% content_for :title_area do %>
+  Editing Translations
+<% end %>
 <%= render 'form', translation: @translation %>
-
-<%= link_to 'Show', @translation %> |
-<%= link_to 'Back', translations_path %>

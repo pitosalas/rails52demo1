@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="title">Translations</h1>
+  <p id="notice"><%= notice %></p>
+  <h2 class="subtitle">
+      <%= @content.from_lang %>: <%= @content.text %>
+  </h2>
+  <div class="content">
+    <%= render partial: "translations/translation", collection: @translations %>
+  </div>
+  <%= link_to 'add another translation', new_content_translation_path(@content), class: "button" %>
+  <%= link_to 'Back', contents_path, class: "button" %>
+</div>

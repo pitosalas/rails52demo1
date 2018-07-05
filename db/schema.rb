@@ -25,10 +25,11 @@ ActiveRecord::Schema.define(version: 2018_07_04_014928) do
   create_table "translations", force: :cascade do |t|
     t.text "translation"
     t.string "to_lang"
-    t.bigint "contents_id"
+    t.bigint "content_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["contents_id"], name: "index_translations_on_contents_id"
+    t.index ["content_id"], name: "index_translations_on_content_id"
   end
 
+  add_foreign_key "translations", "contents"
 end
