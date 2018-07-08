@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "Original Text", class: "label" %>
+    <%= form.label :text, "Enter Original Text", class: "label" %>
     <div class="control">
       <%= form.text_area :text, class: "textarea" %>
     </div>
   </div>
 
   <div class="field">
-    <%= form.label "Language of original", class: "label" %>
+    <%= form.label :from_lang, "Language of original", class: "label" %>
     <div class="select"> 
       <%= form.select(:from_lang, options_for_select([["English", "en"], ["French", "fr"], ["Spanish", "es"]])) %>
     </div>
