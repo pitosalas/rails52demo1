@@ -1,31 +1,34 @@
 <%= form_with(model: content, local: true) do |form| %>
   <% if content.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(content.errors.count, "error") %> prohibited this content from being saved:</h2>
+      <h2>
+        <%= pluralize(content.errors.count, "error") %> prohibited this content from being saved:</h2>
 
       <ul>
-      <% content.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% content.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+          <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= form.label :text, "Enter Original Text", class: "label" %>
-    <div class="control">
-      <%= form.text_area :text, class: "textarea" %>
-    </div>
-  </div>
+      <div class="field">
+        <%= form.label :text, "Enter Original Text", class: "label" %>
+          <div class="control">
+            <%= form.text_area :text, class: "textarea" %>
+          </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :from_lang, "Language of original", class: "label" %>
-    <div class="select"> 
-      <%= form.select(:from_lang, options_for_select([["English", "en"], ["French", "fr"], ["Spanish", "es"]])) %>
-    </div>
-  </div>
+      <div class="field">
+        <%= form.label :from_lang, "Language of original", class: "label" %>
+          <div class="select">
+            <%= form.select(:from_lang, google_language_options) %>
+          </div>
+      </div>
 
-  <div class="actions control">
-    <%= form.submit "OK", class:"button is-small" %>
-  </div>
-<% end %>
+      <div class="actions control">
+        <%= form.submit "OK", class:"button is-small" %>
+      </div>
+      <% end %>

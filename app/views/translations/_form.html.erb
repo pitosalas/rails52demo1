@@ -14,7 +14,7 @@
   <div class="field">
     <%= form.label "Target Language", class: "label is-small" %>
     <div class="select"> 
-      <%= form.select(:to_lang, options_for_select([["English", "en"], ["French", "fr"], ["Spanish", "es"]])) %>
+      <%= form.select(:to_lang, google_language_options) %>
     </div>
   </div>
 

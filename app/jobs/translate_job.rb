@@ -6,7 +6,7 @@ class TranslateJob < ApplicationJob
     valid_lang = TranslationHelper.validate_lang(content.from_lang)
     raise "invald from lang" unless valid_lang
     content.translations.each do
-      |xlate| xlate.translation = TranslationHelper.translate(content.text,   content.from_lang, xlate.to_lang)
+      |xlate| xlate.translation = TranslationHelper.translate(content.text, content.from_lang, xlate.to_lang)
       xlate.save
     end
   end

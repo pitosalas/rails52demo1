@@ -20,7 +20,7 @@ class TranslationsController < ApplicationController
     @translation = @content.translations.build(translation_params)
     respond_to do |format|
       if @translation.save
-        format.html { redirect_to contents_path, notice: 'Translation was successfully created.' }
+        format.html { redirect_to content_path(@content), notice: 'Translation was successfully created.' }
         format.json { render :show, status: :created, location: @translation }
       else
         format.html { render :new }
