@@ -17,6 +17,7 @@ class ContentsController < ApplicationController
   # GET /contents/new
   def new
     @content = Content.new
+    # render 'modalnew'
   end
 
   # GET /contents/1/edit
