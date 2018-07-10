@@ -1,6 +1,7 @@
 
 console.log('Hello World from Webpacker')
 
+import "../../../node_modules/bulma/bulma.sass";
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
