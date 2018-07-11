@@ -1,7 +1,7 @@
 <% content_for :title_area do %>
   Original Texts
 <% end %>
-
+<div data-controller="content">
 <table class="table">
   <thead>
     <tr>
@@ -16,6 +16,9 @@
   </tbody>
 </table>
 <%= link_to 'New Original Text', new_content_path, class:"button" %>
-<button class="button" data-controller="content" 
-        data-action="click->content#newTranslation">New Original Text
+<button class="button"  
+        data-action="click->content#translation">New Original Text
 </button>
+
+<%= render("modal_new", content: @content) %>
+</div>

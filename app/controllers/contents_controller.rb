@@ -5,7 +5,7 @@ class ContentsController < ApplicationController
   # GET /contents.json
   def index
     @contents = Content.all
-    puts @contents.size
+    @content = Content.new # For modal "new" form that appears in the bottom of the index form.
   end
 
   # GET /contents/1
@@ -17,7 +17,6 @@ class ContentsController < ApplicationController
   # GET /contents/new
   def new
     @content = Content.new
-    # render 'modalnew'
   end
 
   # GET /contents/1/edit
