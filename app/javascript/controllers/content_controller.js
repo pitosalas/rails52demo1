@@ -1,11 +1,8 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["area"]
+  static targets = []
   initialize() {
-    console.log(this.areaTarget + "!!")
-  }
-  update() {
-    console.log("Updating!")
+    console.log("Stim Content Controller loaded")
   }
 }

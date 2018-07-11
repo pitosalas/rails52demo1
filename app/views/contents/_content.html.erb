@@ -1,8 +1,7 @@
-<tr id=<%=dom_id(content) %> data-controller="content" >
-  <td data-target="content.area">xxxs<%= content.text %></td>
+<tr data-controller="content" data-target="content.contentRow" >
+  <td><%= link_to content.text, content, data: {target: "content.rowValue" }  %></td>
   <td><%= content.from_lang%></td>
   <td><%= content.translations.size %> (<%= link_to 'add', new_content_translation_path(content) %>) </td>
-  <td><%= link_to 'Show', content %></td>
-  <td><%= link_to 'Edit', edit_content_path(content) %></td>
+  <td><%= link_to 'Edit', edit_content_path(content), remote: true %></td>
   <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

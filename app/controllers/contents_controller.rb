@@ -1,11 +1,13 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :set_contents, only: [ :create ]
 
   # GET /contents
   # GET /contents.json
   def index
     @contents = Content.all
-    puts @contents.size
+    @contentnew = Content.new # For modal "new" form that appears in the bottom of the index form.
+    @contentold = Content.all.first # For model "edit" form that appears below it.
   end
 
   # GET /contents/1
@@ -17,7 +19,6 @@ class ContentsController < ApplicationController
   # GET /contents/new
   def new
     @content = Content.new
-    # render 'modalnew'
   end
 
   # GET /contents/1/edit
@@ -31,7 +32,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       if @content.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
+        format.html { redirect_to contents_url, notice: 'Content was successfully created.' }
         format.json { render :show, status: :created, location: @content }
       else
         format.html { render :new }
@@ -45,7 +46,7 @@ class ContentsController < ApplicationController
   def update
     respond_to do |format|
       if @content.update(content_params)
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
+        format.html { redirect_to contents_url, notice: 'Content was successfully updated.' }
         format.json { render :show, status: :ok, location: @content }
       else
         format.html { render :edit }
@@ -69,6 +70,10 @@ class ContentsController < ApplicationController
   
   def set_content
     @content = Content.find(params[:id])
+  end
+
+  def set_contents
+    @contents = Content.all
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
