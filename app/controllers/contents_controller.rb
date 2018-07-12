@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :set_contents, only: [ :create ]
 
   # GET /contents
   # GET /contents.json
@@ -30,7 +31,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       if @content.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
+        format.html { redirect_to contents_url, notice: 'Content was successfully created.' }
         format.json { render :show, status: :created, location: @content }
       else
         format.html { render :new }
@@ -68,6 +69,10 @@ class ContentsController < ApplicationController
   
   def set_content
     @content = Content.find(params[:id])
+  end
+
+  def set_contents
+    @contents = Content.all
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

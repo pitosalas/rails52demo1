@@ -4,5 +4,6 @@
   <td><%= content.translations.size %> (<%= link_to 'add', new_content_translation_path(content) %>) </td>
   <td><%= link_to 'Show', content %></td>
   <td><%= link_to 'Edit', edit_content_path(content) %></td>
+  <td><a data-action="click->content#editContent" id="<%= dom_id(content) %>">Edit</a></td>
   <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
