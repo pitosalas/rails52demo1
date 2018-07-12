@@ -6,8 +6,7 @@
       <button class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <%= content %>
-      <%= form_with(model: content, local: true) do |form| %>
+      <%= form_with(model: content, local: true, data: {target: "content.modalForm"}) do |form| %>
         <% render "content_form_error_section", content: content%>
         <div class="field">
           <%= form.label :text, "Enter Original Text", class: "label" %>

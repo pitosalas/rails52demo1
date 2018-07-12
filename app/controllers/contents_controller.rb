@@ -6,7 +6,8 @@ class ContentsController < ApplicationController
   # GET /contents.json
   def index
     @contents = Content.all
-    @content = Content.new # For modal "new" form that appears in the bottom of the index form.
+    @contentnew = Content.new # For modal "new" form that appears in the bottom of the index form.
+    @contentold = Content.find(1)
   end
 
   # GET /contents/1
