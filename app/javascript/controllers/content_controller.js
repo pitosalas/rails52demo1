@@ -11,9 +11,11 @@ export default class extends Controller {
   edit() {
     console.log(this.editBtnTarget)
     console.log(this.editBtnTarget.id)
+    console.log(document.querySelectorAll(".form.content-form"))
     // console.log(this.modalFormTarget)
     // this.modalFormTarget.action = this.editBtnTarget.id
-    // this.showModalTarget.classList.add("is-active")
-    console.log(document.querySelectorAll(".modal.content-form"))
+    this.showModalTarget.classList.add("is-active")
+    document.querySelectorAll(".form.content-form").action = this.editBtnTarget.id
+
   }
 }

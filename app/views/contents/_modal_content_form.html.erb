@@ -1,11 +1,11 @@
-<div class="modal content-form" data-target="content.showModal">
+<div class="modal" data-target="content.showModal" data-controller="content">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">Original Text</p>
     </header>
     <section class="modal-card-body">
-      <%= form_with(model: content, local: true, data: {target: "content.modalForm"}) do |form| %>
+      <%= form_with(model: content, local: true, class: "form content-form", data: {target: "content.modalForm"}) do |form| %>
         <% render "content_form_error_section", content: content%>
         <div class="field">
           <%= form.label :text, "Enter Original Text", class: "label" %>
