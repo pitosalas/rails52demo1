@@ -7,7 +7,7 @@ class ContentsController < ApplicationController
   def index
     @contents = Content.all
     @contentnew = Content.new # For modal "new" form that appears in the bottom of the index form.
-    @contentold = Content.find(1)
+    @contentold = Content.all.first # For model "edit" form that appears below it.
   end
 
   # GET /contents/1
@@ -46,7 +46,7 @@ class ContentsController < ApplicationController
   def update
     respond_to do |format|
       if @content.update(content_params)
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
+        format.html { redirect_to contents_url, notice: 'Content was successfully updated.' }
         format.json { render :show, status: :ok, location: @content }
       else
         format.html { render :edit }

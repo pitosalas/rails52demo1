@@ -1,9 +1,8 @@
-<div class="modal" data-target="content.showModal">
+<div class="modal content-form" data-target="content.showModal">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">Original Text</p>
-      <button class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
       <%= form_with(model: content, local: true, data: {target: "content.modalForm"}) do |form| %>

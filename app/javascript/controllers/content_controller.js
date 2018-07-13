@@ -11,9 +11,9 @@ export default class extends Controller {
   edit() {
     console.log(this.editBtnTarget)
     console.log(this.editBtnTarget.id)
-    console.log(this.modalFormTarget)
-    this.modalFormTarget.action = this.editBtnTarget.id
-    this.showModalTarget.classList.add("is-active")
-
+    // console.log(this.modalFormTarget)
+    // this.modalFormTarget.action = this.editBtnTarget.id
+    // this.showModalTarget.classList.add("is-active")
+    console.log(document.querySelectorAll(".modal.content-form"))
   }
 }
