@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails 5.2 Application written to showcase and demonstrate various Rails features, most of which are new in Rails 5.x.
 
-Things you may want to cover:
+* Stimulus - A javascript notification and updating package, light weight and easy to use.
 
-* Ruby version
+* ActionCable - Rails interface to Web Sockets and Push processing.
 
-* System dependencies
+* Credentials - A single encryption key to manage all the other secret credentials (typically API keys) so that they do not end up on Github
 
-* Configuration
+* Active Job - A Rails interface to background processing
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
