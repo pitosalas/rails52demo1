@@ -1,9 +1,7 @@
-<tr>
-  <td><%= link_to content.text, content %></td>
+<tr data-controller="content" data-target="content.contentRow" >
+  <td><%= link_to content.text, content, data: {target: "content.rowValue" }  %></td>
   <td><%= content.from_lang%></td>
   <td><%= content.translations.size %> (<%= link_to 'add', new_content_translation_path(content) %>) </td>
-  <td><%= link_to 'Show', content %></td>
-  <td><%= link_to 'Edit', edit_content_path(content) %></td>
-  <td data-controller="content"><a data-action="click->content#edit" data-target="content.editBtn" id="<%= url_for(content) %>")>Edit</a></td>
+  <td><%= link_to 'Edit', edit_content_path(content), remote: true %></td>
   <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

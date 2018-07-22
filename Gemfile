@@ -64,6 +64,5 @@ end
 gem 'pry-rails'
 gem 'easy_translate'
 gem 'minispec-rails'
-gem 'webpacker', '~> 3.5'
 
 

@@ -1,31 +1,34 @@
-<div class="modal" data-target="content.showModal" data-controller="content">
+<div class="modal is-active">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Original Text</p>
+      <p class="modal-card-title">New Content</p>
     </header>
-    <section class="modal-card-body">
-      <%= form_with(model: content, local: true, class: "form content-form", data: {target: "content.modalForm"}) do |form| %>
-        <% render "content_form_error_section", content: content%>
+    <div class="modal-card-body">
+      <%= form_with(model: content, local: true) do |form| %>
+        <%= render 'content_form_error_section', content: content %>
         <div class="field">
           <%= form.label :text, "Enter Original Text", class: "label" %>
-            <div class="control">
-              <%= form.text_area :text, class: "textarea" %>
-            </div>
-        </div>
-
-        <div class="field">
-          <%= form.label :from_lang, "Language of original", class: "label" %>
-            <div class="select">
-              <%= form.select(:from_lang, google_language_options) %>
-            </div>
-        </div>
-        <footer class="modal-card-foot">
-          <div class="actions control">
-            <%= form.submit "OK", class:"button is-success" %>
+          <div class="control">
+            <%= form.text_area :text, class: "textarea" %>
           </div>
-        </footer>
+        </div>
+        <div class="field">
+          <%= form.label :from_lang, "Language of original", class: "field-label" %>
+          <div class="select">
+            <%= form.select(:from_lang, google_language_options) %>
+          </div>
+        </div>
+        <div class="field is-grouped is-grouped-right">
+            <p class="actions control">
+              <%= form.submit "OK", class:"button is-success" %>
+            </p>
+            <p class="control">
+              <%= link_to "back", root_path, class: "button" %>
+            </p>
+          </div>
+        </div>
       <% end %>
-    </section>
+    </div>
   </div>
 </div>
